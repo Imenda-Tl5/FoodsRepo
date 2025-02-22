@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import "./FoodItem.css";
 import { StoreContext } from '../../context/StoreContextProvider';
+import.meta.env.VITE_API_URL
 
 const FoodItem = ({ image, name, description, price, id, category }) => {
     const { cartItem, setCartItem } = useContext(StoreContext);
@@ -20,7 +21,7 @@ const FoodItem = ({ image, name, description, price, id, category }) => {
             return;
         }
     
-        const url = "http://localhost:5001/add";
+        const url = `${import.meta.env.VITE_API_URL}/add}`;
         const payload = { 
             id, 
             name, 
